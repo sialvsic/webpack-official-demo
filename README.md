@@ -9,18 +9,18 @@
 ## how to run
 first
 ```
-$ npm install
+$ yarn 或 yarn install 
 ```
 
 and then
 
 ```
-$ npm start
+$ yarn start
 ```
 
 if you want to build, you can 
 ```
-$ npm run build
+$ yarn build
 ```
 
 ## version
