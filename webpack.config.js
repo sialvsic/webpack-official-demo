@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
+  devtool: 'inline-source-map',
   entry: {
     app: './src/index.js',
     print: './src/print.js'
@@ -11,6 +12,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/'
   },
   plugins: [
     new CleanWebpackPlugin(['build']),
@@ -38,5 +40,8 @@ module.exports = {
         ]
       }
     ]
+  },
+  devServer: {
+    contentBase: './build'
   }
 };
