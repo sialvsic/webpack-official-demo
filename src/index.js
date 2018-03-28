@@ -1,30 +1,39 @@
 import _ from 'lodash';
+import { cube } from './math.js';
 
 import './style.css';
 import Icon from './icon.jpg';
 import printMe from './print';
 
-function component() {
-  var element = document.createElement('div');
-  var btn = document.createElement('button')
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+function component1() {
+  const element = document.createElement('div');
   element.classList.add('hello');
 
-
-  // Add the image to our existing div.
-  var myIcon = new Image();
-  myIcon.src = Icon;
-
-  element.appendChild(myIcon);
-
-  btn.innerHTML = 'Click me and check the console!';
+  const btn = document.createElement('button');
+  btn.innerHTML = _.join(['Hello', 'webpack'], ' ');
   btn.onclick = printMe;
+
+
+  element.innerHTML = [
+    'Hello webpack!',
+    '5 cubed is equal to ' + cube(5)
+  ].join('\n\n');
 
   element.appendChild(btn);
 
   return element;
 }
 
-document.body.appendChild(component());
+function component2() {
+  const element = document.createElement('div');
+
+  const myIcon = new Image();
+  myIcon.src = Icon;
+
+  element.appendChild(myIcon);
+
+  return element;
+}
+
+document.body.appendChild(component1());
+document.body.appendChild(component2());

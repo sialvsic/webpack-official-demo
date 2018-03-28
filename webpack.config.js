@@ -3,16 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   entry: {
-    app: './src/index.js',
+    main: './src/index.js',
   },
   output: {
-    filename: '[name].bundle.js',
+    // filename: '[name].bundle.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
-    publicPath: '/'
   },
   plugins: [
     new CleanWebpackPlugin(['build']),
@@ -21,7 +22,7 @@ module.exports = {
     }),
     new ManifestPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
@@ -46,5 +47,6 @@ module.exports = {
   devServer: {
     contentBase: './build',
     hot: true,
-  }
+  },
+  mode: 'development',
 };
