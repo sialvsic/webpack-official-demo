@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Neuton-Regular";
+  src: url("./Neuton-Regular.ttf");
+}
+
+body {
+  font-family: "Neuton-Regular";
+}
+
+.hello {
+  color: red;
+  background: url('./icon.jpg');
+}
