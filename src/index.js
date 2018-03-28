@@ -1,7 +1,7 @@
 import _ from 'lodash';
+
 import './style.css';
 import Icon from './icon.jpg';
-
 import printMe from './print';
 
 function component() {
