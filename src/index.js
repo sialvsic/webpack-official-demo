@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import join from 'lodash/join';
 import { cube } from './math.js';
 
 import './style.css';
@@ -10,9 +10,8 @@ function component1() {
   element.classList.add('hello');
 
   const btn = document.createElement('button');
-  btn.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  btn.innerHTML = join(['Hello', 'webpack'], 'lodash');
   btn.onclick = printMe;
-
 
   element.innerHTML = [
     'Hello webpack!',
