@@ -34,5 +34,20 @@ function component2() {
   return element;
 }
 
+function getComponent() {
+  return import(/* webpackChunkName: "lodash" */ 'lodash').then(_ => {
+    const element = document.createElement('div');
+
+    element.innerHTML = join(['Hello', 'webpack'], ' ');
+
+    return element;
+
+  }).catch(error => 'An error occurred while loading the component' + error);
+}
+
+getComponent().then((component => {
+  document.body.appendChild(component);
+}));
+
 document.body.appendChild(component1());
 document.body.appendChild(component2());
