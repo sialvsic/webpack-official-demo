@@ -3,7 +3,6 @@ import { cube } from './math.js';
 
 import './style.css';
 import Icon from './icon.jpg';
-import printMe from './print';
 
 function component1() {
   const element = document.createElement('div');
@@ -11,7 +10,9 @@ function component1() {
 
   const btn = document.createElement('button');
   btn.innerHTML = join(['Hello', 'webpack'], 'lodash');
-  btn.onclick = printMe;
+  btn.onclick = () => {
+    console.log('i am click');
+  };
 
   element.innerHTML = [
     'Hello webpack!',
@@ -35,10 +36,10 @@ function component2() {
 }
 
 function getComponent() {
-  return import(/* webpackChunkName: "lodash" */ 'lodash').then(_ => {
-    const element = document.createElement('div');
+  return import(/* webpackChunkName: "lodash" */ 'lodash/max').then(module => {
 
-    element.innerHTML = join(['Hello', 'webpack'], ' ');
+    const element = document.createElement('div');
+    element.innerHTML = module.default([1, 2, 100, 22]);
 
     return element;
 
@@ -51,3 +52,23 @@ getComponent().then((component => {
 
 document.body.appendChild(component1());
 document.body.appendChild(component2());
+
+function component3() {
+  const element = document.createElement('div');
+  const button = document.createElement('button');
+  const br = document.createElement('br');
+
+  button.innerHTML = 'Click me and look at the console!';
+
+  element.appendChild(br);
+  element.appendChild(button);
+
+  button.onclick = event => import(/* webpackChunkName: "print" */ './print').then(module => {
+    const print = module.default;
+    print();
+  });
+
+  return element;
+}
+
+document.body.appendChild(component3());
