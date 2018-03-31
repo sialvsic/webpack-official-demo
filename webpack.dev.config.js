@@ -10,14 +10,14 @@ module.exports = {
     main: './src/index.js',
   },
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    filename: '[name].[hash:6].bundle.js',
+    chunkFilename: '[name].[chunkhash:6].bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
   plugins: [
     new CleanWebpackPlugin(['build']),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: 'Caching'
     }),
     new ManifestPlugin(),
     new webpack.NamedModulesPlugin(),
