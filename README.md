@@ -12,4 +12,10 @@ https://webpack.js.org/guides/
 - Tree Shaking 2018.03.28
 - Production 2018.03.29
 - Code Splitting 2018.03.29
+- Lazy Loading 2018.03.31
+- Caching 2018.03.31
+- Authoring Libraries 2018.03.31
+- Shimming 2018.03.31
+
+
 
