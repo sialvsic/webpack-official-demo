@@ -13,6 +13,7 @@ module.exports = {
     filename: '[name].[hash:6].bundle.js',
     chunkFilename: '[name].[chunkhash:6].bundle.js',
     path: path.resolve(__dirname, 'build'),
+    libraryTarget: 'umd'
   },
   plugins: [
     new CleanWebpackPlugin(['build']),
@@ -25,6 +26,11 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src'),
+        loader: 'babel-loader'
+      },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']

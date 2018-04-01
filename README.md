@@ -16,6 +16,10 @@ https://webpack.js.org/guides/
 - Caching 2018.03.31
 - Authoring Libraries 2018.03.31
 - Shimming 2018.03.31
-
+- Progressive Web Application 2018.04.01
+- TypeScript 2018.04.01
+- Migrating Versions 2018.04.01
+- Environment Variables 2018.04.01
+- Build Performance 2018.04.01
 
 
