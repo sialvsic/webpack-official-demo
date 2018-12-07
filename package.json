@@ -2,7 +2,7 @@
   "name": "webpack-demo",
   "version": "1.0.0",
   "private": true,
-  "repository": "git@github.com:sialvsic/webpack-demo.git",
+  "repository": "git@github.com:sialvsic/webpack-official-demo.git",
   "author": "zhou.yixing <zhou.yixing@rea-group.com>",
   "license": "MIT",
   "scripts": {

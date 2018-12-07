@@ -13,7 +13,7 @@ module.exports = {
     libraryTarget: 'umd'
   },
   plugins: [
-    // new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin(),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Progressive Web Application'
